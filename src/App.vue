@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 
 
@@ -9,7 +9,7 @@ export default {
     },
     data(){
         return{
-            base_API: 'http//127.0.0.1:8000/',
+            base_url: 'http//127.0.0.1:8000/',
             projects_API: 'api/projects',
             loading: true,
             projects: null,
@@ -20,7 +20,7 @@ export default {
         getProjects(url){
             axios
             .get(url)
-            .then(response=> {
+            .then(response => {
                 this.projects = response.data.projects
                 this.loading = false
             })
@@ -31,12 +31,12 @@ export default {
             },
 
             getImageFromPath(path){
-                return this.base_url + /* 'storage/' + */ path;
+                return this.base_url +  'storage/' +  path;
             }
         
     },
     mounted(){
-        const url = this.base_API +   this.projects_API
+        const url = this.base_url +   this.projects_API
         this.getProjects(url)
     }
 }
@@ -56,7 +56,7 @@ export default {
         <div class="row">
             <div class="col" v-for="project in projects">
                 <div class="card text-start">
-                  <img class="card-img-top" :src="getImageFromPath()" alt="Title">
+                  <img class="card-img-top" :src="getImageFromPath(project.cover_image)" alt="Title">
                   <div class="card-body h-100">
                     <h4 class="card-title">{{ project.title }}</h4>
                     <p class="card-text"></p>
