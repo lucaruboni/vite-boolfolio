@@ -12,8 +12,9 @@ export default {
             base_url: 'http://127.0.0.1:8000/',
             projects_API: 'api/projects',
             loading: true,
-            projects: null,
-            error: null
+            projects: '',
+            error: null,
+            max_text_length: 100
         }
     },
     methods:{
@@ -21,7 +22,8 @@ export default {
             axios
             .get(url)
             .then(response => {
-                this.projects = response.data.projects.data
+                
+                this.projects = response.data.projects
                 this.loading = false
             })
             .catch(error => {
@@ -32,6 +34,20 @@ export default {
 
             getImageFromPath(path){
                 return this.base_url +  'storage/' +  path;
+            },
+
+            nextPage(path){
+                this.getProjects(path);
+            },
+            prevPage(path){
+                this.getProjects(path);
+            },
+
+            truncateText(text){
+                if (text.length > 30) {
+                    return text.slice(0, this.max_text_length) + '...';
+                }
+                return text
             }
         
     },
@@ -60,7 +76,7 @@ export default {
                   <img class="card-img-top" :src="getImageFromPath(project.cover_image)" alt="Title">
                   <div class="card-body h-100">
                     <h4 class="card-title">{{ project.title }}</h4>
-                    <p class="card-text"></p>
+                    <p class="card-text"> {{ truncateText(project.content) }}</p>
                   </div>
                 </div>
             </div>
@@ -68,6 +84,24 @@ export default {
     </div>
 
   </section>
+
+  <div class="container" v-if="projects">
+    <nav aria-label="Page navigation">
+      <ul class="pagination pt-5">
+        <li class="page-item">
+          <button class="page-link"  aria-label="Previous" v-if="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
+            <span aria-hidden="true">&laquo;</span>
+          </button>
+        </li>
+    
+        <li class="page-item">
+          <button class="page-link"  aria-label="Next" v-if="projects.next_page_url" @click="nextPage(projects.next_page_url)">
+            <span aria-hidden="true">&raquo;</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss">
