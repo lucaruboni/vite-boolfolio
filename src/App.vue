@@ -9,7 +9,7 @@ export default {
     },
     data(){
         return{
-            base_url: 'http//127.0.0.1:8000/',
+            base_url: 'http://127.0.0.1:8000/',
             projects_API: 'api/projects',
             loading: true,
             projects: null,
@@ -21,7 +21,7 @@ export default {
             axios
             .get(url)
             .then(response => {
-                this.projects = response.data.projects
+                this.projects = response.data.projects.data
                 this.loading = false
             })
             .catch(error => {
@@ -37,6 +37,7 @@ export default {
     },
     mounted(){
         const url = this.base_url +   this.projects_API
+        console.log(url)
         this.getProjects(url)
     }
 }
@@ -54,7 +55,7 @@ export default {
   <section class="projects">
     <div class="container">
         <div class="row">
-            <div class="col" v-for="project in projects">
+            <div class="col" v-for="project in projects.data">
                 <div class="card text-start">
                   <img class="card-img-top" :src="getImageFromPath(project.cover_image)" alt="Title">
                   <div class="card-body h-100">
