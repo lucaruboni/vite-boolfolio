@@ -41,6 +41,6 @@ export default {
 
 <style lang="scss" scoped>
   section{
-    height: 100vh;
+    height: calc(100vh - 100px);
   }
 </style>
