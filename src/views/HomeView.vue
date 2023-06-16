@@ -1,4 +1,5 @@
 <script>
+
 import AppBanner from '../components/AppBanner.vue';
 import ProjectsList from '../components/ProjectsList.vue';
 export default {
@@ -6,6 +7,7 @@ export default {
     components: {
         AppBanner,
         ProjectsList
+      
         
     }
 }
@@ -13,9 +15,9 @@ export default {
 </script>
 
 <template>
-    <body>
+    <div class="body_bg">
         
- 
+        
         <div class="p-5 mb-4 text-white">
             <div class="container-fluid">
               <h1 class="display-5 fw-bold">MY PROJECTS</h1>
@@ -26,14 +28,23 @@ export default {
       
 
         <ProjectsList></ProjectsList>
-    </body>   
+    </div>   
 </template>
 
+
+
 <style lang="scss" scoped>
-    body{
-        background-image: url("../../public/background.jpg");
-        height: 100vh;
-        background-repeat: no-repeat;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.body_bg{
+        background-image: url("../../public/7957.png");
         background-size: cover;
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+        box-shadow: 50px 0 0 black;
     }   
 </style>

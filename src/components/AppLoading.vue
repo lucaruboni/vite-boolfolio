@@ -7,7 +7,7 @@ export default {
 <template>
     <div class="container">
        <div class="row justify-content-center ms-5 py-5">
-            <div class="back align-self-center ms-5">
+            <div class="back justify-self-center ms-5">
 	            <span>L</span>
 	            <span>O</span>
 	            <span>A</span>
@@ -31,6 +31,11 @@ body {
 display:flex;
 align-items:center;
 height:90%;
+}
+
+.row{
+  height: 100vh;
+  
 }
 .back {
   margin:1em auto;

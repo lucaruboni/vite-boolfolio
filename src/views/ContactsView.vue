@@ -39,6 +39,8 @@ export default {
    
 </template>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+  section{
+    height: 100vh;
+  }
 </style>

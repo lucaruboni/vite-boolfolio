@@ -1,6 +1,10 @@
 <script>
+
 export default{
-    name: 'AppHeader'
+    name: 'AppHeader',
+    components: {
+       
+    }
 }
 </script>
 
@@ -11,6 +15,7 @@ export default{
             <div class="logo ps-5 align-self-center">LUFFIDEV</div>
 
             <div class="d-flex gap-5 me-5 pe-5 align-self-center">
+                
                 <router-link class="nav-link" :to="{'name' : 'home'}" aria-current="page">HOME</router-link>
                 <router-link class="nav-link" :to="{'name' : 'about'}">ABOUT</router-link>
                 <router-link class="nav-link_my my_url" :to="{'name' : 'contacts'}">CONTACTS</router-link>
@@ -31,7 +36,7 @@ export default{
 
     nav{
         height: 100px;
-        box-shadow: 0 10px 15px black;
+        box-shadow: 0 10px 50px black;
 
         a{
             font-weight: 600;
@@ -56,6 +61,7 @@ export default{
       position: sticky;
       top: 0;
       left: 0;
+      z-index: 100;
     }
 
     .nav-link {
