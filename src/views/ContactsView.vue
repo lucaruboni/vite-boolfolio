@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-   <AppBanner title="CONTACTS"></AppBanner>
+
     <section class="contact-me py-5">
         <div class="container">
             <form>

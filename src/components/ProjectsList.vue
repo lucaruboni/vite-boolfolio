@@ -65,15 +65,9 @@ export default{
 
 <template>
        
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">My Blog</h1>
-            <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia deleniti optio eaque iste porro, placeat numquam inventore blanditiis saepe!</p>
 
-        </div>
-    </div>
 
-      <section class="projects" v-if="projects && !loading">
+      <section class="projects px-4" v-if="projects && !loading">
         <div class="d-flex justify-content-center ms-3 me-3">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
                 <div class="col" v-for="project in projects.data">

@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <AppBanner title="ABOUT"></AppBanner>
+ 
 
     
         <div class="my_row">
@@ -53,12 +53,12 @@ export default {
         font-weight: 500;
     }
     .my_row{
-        height: calc(100vh - 144px);
+        height: calc(100vh - 100px);
         background-image: url(https://cdn.cevoid.com/images/GOqBd3rn9JExwBrL1jrWF.jpeg?class=1080);
        
     }
     .bg_filter{
-        height: calc(100vh - 144px);
+        height: calc(100vh - 100px);
         background-color: rgba(0, 0, 0, 0.225);
     }
     

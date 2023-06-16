@@ -10,8 +10,8 @@ export default{
 
 <template>
      <div>
-        <div class="bg-dark py-4">
-            <h1 class="text-white ps-5">{{title}}</h1>
+        <div class=" py-1">
+            <h1 class=" ps-5 text-center">{{title}}</h1>
         </div>
      </div>
 </template>

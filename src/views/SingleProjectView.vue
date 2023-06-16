@@ -39,7 +39,6 @@ export default {
 </script>
 
 <template>
-    <AppBanner :title="$route.params.slug"></AppBanner>
 
     <div v-if="project">
         
@@ -71,12 +70,12 @@ export default {
 <style lang="scss" scoped>
 
     .my_row{
-        height: calc(100vh - 144px);
+        height: calc(100vh - 100px);
         background-image: url(https://cdn.cevoid.com/images/GOqBd3rn9JExwBrL1jrWF.jpeg?class=1080);
        
     }
     .bg_filter{
-        height: calc(100vh - 144px);
+        height: calc(100vh - 100px);
         background-color: rgba(0, 0, 0, 0.225);
     }
     
