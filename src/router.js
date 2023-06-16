@@ -3,6 +3,7 @@ import HomeView from './views/HomeView.vue';
 import AboutView from './views/AboutView.vue';
 import ContactsView from './views/ContactsView.vue';
 import SingleProjectView from './views/SingleProjectView.vue';
+import NotFound from './views/NotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -31,6 +32,11 @@ const router = createRouter({
             'path' : '/contacts',
             'name' : 'contacts',
             'component' : ContactsView
+        },
+        {
+            path: "/:pathMatch(.*)*",
+             name: "NotFound",
+              component: NotFound
         }
 
     ]

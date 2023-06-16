@@ -28,7 +28,14 @@ export default {
           if (response.data.success) {
             this.project = response.data.result  
           } else{
-            //404 error page
+            this.$router.push({
+              name: 'NotFound',
+              // preserve current path and remove the first char to avoid the target URL starting with `//`
+              params: { pathMatch: this.$route.path.substring(1).split('/') },
+              // preserve existing query and hash if any
+              query: this.$route.query,
+              hash: this.$route.hash,
+            })
           }
         })
         .catch(error => {
