@@ -12,17 +12,20 @@ export default {
 </script>
 
 <template>
- 
+  <div class="router-view-wrapper">
     <AppHeader></AppHeader>
     <transition name="fade">
-         <router-view :key="$route.fullPath" ></router-view>
+      <router-view :key="$route.fullPath"></router-view>
     </transition>
-
+  </div>
 </template>
 
 <style lang="scss">
 @use './styles/general.scss';
 
+.router-view-wrapper {
+  background-color: #000000; /* sostituisci con il tuo colore di sfondo */
+}
 
 .fade-enter-active,
 .fade-leave-active {

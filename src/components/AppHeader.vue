@@ -12,7 +12,7 @@ export default{
     <header>
         <nav class="nav justify-content-between">
 
-            <div class="logo ps-5 align-self-center">LUFFIDEV</div>
+            <img src="../../public/linkedin_banner_image_1.png" height="100" alt="logo_image LR Dev Solutions">
 
             <div class="d-flex gap-5 me-5 pe-5 align-self-center">
                 

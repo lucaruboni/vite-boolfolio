@@ -27,7 +27,7 @@ export default {
           </div>
       
 
-        <ProjectsList></ProjectsList>
+          <ProjectsList></ProjectsList>
     </div>   
 </template>
 
@@ -43,8 +43,9 @@ export default {
 .body_bg{
         background-image: url("../../public/7957.png");
         background-size: cover;
+        
         background-repeat: repeat-y;
-        background-attachment: fixed;
+      
         box-shadow: 50px 0 0 black;
     }   
 </style>

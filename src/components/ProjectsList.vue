@@ -68,17 +68,17 @@ export default{
 
 
        <section class="projects px-4" v-if="projects && !loading">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 flex-column justify-content-center gap-5">
     <div class="col" v-for="project in projects.data">
-      <div class="card text-start h-100">
+      <div class="card h-100">
         <div class="card-img-wrapper position-relative">
           <img class="card-img-top img-fluid" :src="getImageFromPath(project.cover_image)" alt="Title">
           <div class="card-overlay"></div>
         </div>
-        <div class="card-body h-100">
+        <div class="card-body w-100 px-4 h-100">
           <h4 class="card-title">{{ project.title }}</h4>
           <p class="card-text">{{ truncateText(project.content) }}</p>
-          <router-link :to="{name: 'single-project', params: {'slug': project.slug}}" class="btn btn-primary">Go To Project</router-link>
+          <router-link  :to="{name: 'single-project', params: {'slug': project.slug}}" class="btn btn-primary"  :project_props="project" >Go To Project</router-link>
         </div>
       </div>
     </div>
@@ -125,11 +125,12 @@ export default{
 
 .card-img-wrapper {
   position: relative;
+  height: 100%;
 }
 
 .card-img-top {
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   width: 100%;
   transition: transform 0.5s ease-out;
 }
