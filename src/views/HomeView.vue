@@ -16,15 +16,20 @@ export default {
 
 <template>
     <div class="body_bg">
-        
-        
-        <div class="p-5 mb-4 text-white">
-            <div class="container-fluid">
-              <h1 class="display-5 fw-bold">MY PROJECTS</h1>
-              <p class="col-md-8 fs-4">See what i've worked on!</p>
+
+           
+                <div class="row justify-content-center py-5 my_jumbo">
+                    <div class="col-6 align-self-center text-center py-5">
+                        <h1>LR Dev Solutions</h1>
+                        <p>
+                            As a junior full stack web developer, I am passionate about Web development and dedicated to delivering exceptional and simple user experiences. I keep up with the latest technologies and I'm committed to continuously improving my skills.
+                        </p>
+                    </div>
+                </div>
             
-            </div>
-          </div>
+        
+        
+       
       
 
           <ProjectsList></ProjectsList>
@@ -41,11 +46,32 @@ export default {
     margin: 0;
 }
 .body_bg{
-        background-image: url("../../public/7957.png");
-        background-size: cover;
-        
+        background-image: url("../../public/bg-1.jpg");
+       
+        min-height: calc(100vh - 100px);
         background-repeat: repeat-y;
+        background-position-x: right;
       
         box-shadow: 50px 0 0 black;
     }   
+    h1{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: 800;
+        font-size: 4.5rem;
+        color: antiquewhite;
+    }
+    
+    p{
+        font-family: 'Markazi Text', serif;
+        color: antiquewhite;
+        font-size: 1.5rem;
+        
+
+    }
+    .my_jumbo{
+        height: calc(100vh - 100px);
+    }
+    
+    
+    
 </style>

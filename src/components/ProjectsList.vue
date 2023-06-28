@@ -68,34 +68,34 @@ export default{
 
 
        <section class="projects px-4" v-if="projects && !loading">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 flex-column justify-content-center gap-5">
-    <div class="col" v-for="project in projects.data">
-      <div class="card h-100">
-        <div class="card-img-wrapper position-relative">
-          <img class="card-img-top img-fluid" :src="getImageFromPath(project.cover_image)" alt="Title">
-          <div class="card-overlay"></div>
-        </div>
-        <div class="card-body w-100 px-4 h-100">
-          <h4 class="card-title">{{ project.title }}</h4>
-          <p class="card-text">{{ truncateText(project.content) }}</p>
-          <router-link  :to="{name: 'single-project', params: {'slug': project.slug}}" class="btn btn-primary"  :project_props="project" >Go To Project</router-link>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 justify-content-center gap-5 mx-5">
+              <div class="col" v-for="project in projects.data">
+                <div class="card h-100">
+                  <div class="card-img-wrapper position-relative h-100">
+                    <img class="card-img-top img-fluid" :src="getImageFromPath(project.cover_image)" alt="Title">
+                    <div class="card-overlay"></div>
+                  </div>
+                  <div class="card-body w-100 px-4 h-100">
+                    <h4 class="card-title">{{ project.title }}</h4>
+                    <p class="card-text">{{ truncateText(project.content) }}</p>
+                    <router-link  :to="{name: 'single-project', params: {'slug': project.slug}}" class="btn btn-primary"  :project_props="project" >Go To Project</router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
 
   <div class="container" v-if="projects">
-    <nav aria-label="Page navigation" class="">
+    <nav aria-label="Page navigation" class="d-flex justify-content-center py-5">
       <ul class="pagination py-4 mb-0 text-center">
         <li class="page-item">
-          <button class="page-link" aria-label="Previous" v-if="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
-            <span aria-hidden="true">&laquo;</span>
+          <button class="btn btn-dark" aria-label="Previous" v-if="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
+            <span aria-hidden="true" class="btn_text">PREV</span>
           </button>
         </li>
 
         <li class="page-item">
-          <button class="page-link" aria-label="Next" v-if="projects.next_page_url" @click="nextPage(projects.next_page_url)">
-            <span aria-hidden="true">&raquo;</span>
+          <button class="btn btn-dark" aria-label="Next" v-if="projects.next_page_url" @click="nextPage(projects.next_page_url)">
+            <span aria-hidden="true" class="btn_text">NEXT</span>
           </button>
         </li>
       </ul>
@@ -203,6 +203,11 @@ export default{
   border-color: #000;
   color: #fff;
   text-decoration: none;
+}
+
+.btn_text{
+  font-weight: 600;
+  color: antiquewhite;
 }
 
 </style>
